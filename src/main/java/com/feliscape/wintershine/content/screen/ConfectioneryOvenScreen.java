@@ -36,27 +36,18 @@ public class ConfectioneryOvenScreen extends AbstractContainerScreen<Confectione
         guiGraphics.blit(TEXTURE, this.leftPos, this.topPos, 0, 0, imageWidth, imageHeight);
 
 
-        int scaledWidth = Mth.ceil(this.menu.getCookProgress() * 26.0F);
-        /*guiGraphics.blit(TEXTURE,
-                this.leftPos + 87, this.topPos + 32,
+        int scaledWidth = this.menu.getCookProgressionScaled();
+        WinterShine.printDebug(scaledWidth);
+        guiGraphics.blit(TEXTURE,
+                this.leftPos + 88, this.topPos + 32,
                 176, 8,
-                scaledWidth, 16);*/
-        guiGraphics.blitSprite(BAKE_PROGRESS,
-                26, 16,
-                0, 0,
-                this.leftPos + 87, this.topPos + 32,
                 scaledWidth, 16);
 
         if (menu.isLit()) {
             int scaledLitTime = Mth.ceil(this.menu.getLitProgress() * 8.0F);
-            /*guiGraphics.blit(TEXTURE,
-                    this.leftPos + 95, this.topPos + 48 + scaledLitTime,
+            guiGraphics.blit(TEXTURE,
+                    this.leftPos + 95, this.topPos + 48 + 8 - scaledLitTime,
                     183, 8 - scaledLitTime,
-                    7, scaledLitTime);*/
-            guiGraphics.blitSprite(LIT_PROGRESS,
-                    7, 8,
-                    0, 8 - scaledLitTime,
-                    this.leftPos + 95, this.topPos + 48 + scaledLitTime,
                     7, scaledLitTime);
         }
     }

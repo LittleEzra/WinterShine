@@ -149,9 +149,11 @@ public class ConfectioneryOvenBlockEntity extends SyncedBlockEntity implements M
         boolean wasLit = oven.isLit();
         boolean inventoryChanged = false;
 
+        if (oven.litTime > 0) --oven.litTime;
+
         if (oven.hasInput()) {
             Optional<RecipeHolder<ConfectioneryBakingRecipe>> recipe = oven.getMatchingRecipe(CraftingInput.of(3, 3, oven.getInputItems()));
-            if (!oven.isLit() && recipe.isPresent()) {
+            if (!oven.isLit() && recipe.isPresent() && oven.canBake(recipe.get().value())) {
                 ItemStack fuelStack = oven.inventory.getStackInSlot(SLOT_FUEL);
                 if (!fuelStack.isEmpty()) {
                     oven.litDuration = fuelStack.getBurnTime(RecipeType.SMELTING);
@@ -208,7 +210,6 @@ public class ConfectioneryOvenBlockEntity extends SyncedBlockEntity implements M
         if (level == null) return false;
 
         ++cookTime;
-        if (litTime > 0) --litTime;
         cookTimeTotal = recipe.value().getBakingTime();
         if (cookTime < cookTimeTotal) {
             return false;

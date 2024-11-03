@@ -26,7 +26,7 @@ public class WinterShineBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).strength(0.75F).mapColor(MapColor.COLOR_RED)));
     public static final DeferredBlock<Block> GINGERBREAD_BRICKS = registerBlock("gingerbread_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).strength(1F).mapColor(MapColor.COLOR_ORANGE)));
-    public static final DeferredBlock<Block> FROSTED_GINGERBREAD_BRICKS = registerBlock("gingerbread_bricks",
+    public static final DeferredBlock<Block> FROSTED_GINGERBREAD_BRICKS = registerBlock("frosted_gingerbread_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).strength(1F).mapColor(MapColor.COLOR_ORANGE)));
 
 

@@ -37,12 +37,14 @@ public class WSBakingRecipes {
         ConfectioneryBakingRecipeBuilder.baking(WinterShineItems.GINGERBREAD, 2, NORMAL_COOKING)
                 .requires(Items.WHEAT)
                 .requires(Items.GLOW_BERRIES)
-                .unlockedByAnyIngredient(Items.WHEAT, Items.GLOW_BERRIES);
+                .unlockedByAnyIngredient(Items.WHEAT, Items.GLOW_BERRIES)
+                .save(output);
     }
     private static void bakeMiscellaneous(RecipeOutput output){
         ConfectioneryBakingRecipeBuilder.baking(WinterShineBlocks.FROSTED_GINGERBREAD_BRICKS, 2, FAST_COOKING)
                 .requires(WinterShineBlocks.GINGERBREAD_BRICKS, 2)
                 .requires(Items.SUGAR)
-                .unlockedByAnyIngredient(WinterShineBlocks.GINGERBREAD_BRICKS);
+                .unlockedByAnyIngredient(WinterShineBlocks.GINGERBREAD_BRICKS)
+                .save(output);
     }
 }

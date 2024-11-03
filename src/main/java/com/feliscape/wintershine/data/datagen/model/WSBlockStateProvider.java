@@ -42,7 +42,7 @@ public class WSBlockStateProvider extends BlockStateProvider {
                 extend(baseTexture, "_bottom"),
                 extend(baseTexture, "_top")
         );
-        ModelFile on = models().orientableWithBottom(name(block.get()),
+        ModelFile on = models().orientableWithBottom(name(block.get()) + "_on",
                 extend(baseTexture, "_side"),
                 extend(baseTexture, "_front_on"),
                 extend(baseTexture, "_bottom"),

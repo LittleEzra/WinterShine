@@ -18,6 +18,14 @@ public class WinterShineItems {
     public static final DeferredItem<Item> GINGERBREAD_BRICK = ITEMS.register("gingerbread_brick",
             () -> new Item(new Item.Properties().food(WinterShineFoods.GINGERBREAD)));
 
+
+    public static final DeferredItem<Item> MISCHIEVOUS_GINGERBREAD_MAN = ITEMS.register("mischievous_gingerbread_man",
+            () -> new Item(new Item.Properties().food(WinterShineFoods.MISCHIEVOUS_GINGERBREAD_MAN)));
+    public static final DeferredItem<Item> COZY_GINGERBREAD_MAN = ITEMS.register("cozy_gingerbread_man",
+            () -> new Item(new Item.Properties().food(WinterShineFoods.COZY_GINGERBREAD_MAN)));
+    public static final DeferredItem<Item> SACRIFICIAL_GINGERBREAD_MAN = ITEMS.register("sacrificial_gingerbread_man",
+            () -> new Item(new Item.Properties().food(WinterShineFoods.SACRIFICIAL_GINGERBREAD_MAN)));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

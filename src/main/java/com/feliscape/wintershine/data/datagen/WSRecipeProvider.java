@@ -42,20 +42,20 @@ public class WSRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("# ")
                 .unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES))
                 .save(recipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, WinterShineItems.CANDY_CANE, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, WinterShineItems.GLOWING_CANDY_CANE, 2)
                 .define('#', Items.SUGAR)
-                .define('o', Items.SWEET_BERRIES)
+                .define('o', Items.GLOW_BERRIES)
                 .pattern("#o")
                 .pattern("o ")
                 .pattern("# ")
-                .unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES))
+                .unlockedBy("has_glow_berries", has(Items.GLOW_BERRIES))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, WinterShineBlocks.FROSTED_GINGERBREAD_BRICKS, 2)
+        /*ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, WinterShineBlocks.FROSTED_GINGERBREAD_BRICKS, 2)
                 .requires(WinterShineBlocks.GINGERBREAD_BRICKS, 2)
                 .requires(Items.SUGAR)
                 .unlockedBy("has_gingerbread_bricks", has(WinterShineBlocks.GINGERBREAD_BRICKS))
-                .save(recipeOutput);
+                .save(recipeOutput);*/
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(WinterShineItems.GINGERBREAD), RecipeCategory.MISC, WinterShineItems.GINGERBREAD_BRICK, 0.3F, 200)
                 .unlockedBy("has_gingerbread", has(WinterShineItems.GINGERBREAD)).save(recipeOutput);

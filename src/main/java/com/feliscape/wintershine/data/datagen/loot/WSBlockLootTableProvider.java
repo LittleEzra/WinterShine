@@ -20,6 +20,9 @@ public class WSBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(WinterShineBlocks.CONFECTIONERY_OVEN.get());
         dropSelf(WinterShineBlocks.CANDY_CANE_LOG.get());
+
+        dropSelf(WinterShineBlocks.GINGERBREAD_BRICKS.get());
+        dropSelf(WinterShineBlocks.FROSTED_GINGERBREAD_BRICKS.get());
     }
 
     @Override

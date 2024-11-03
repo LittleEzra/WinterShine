@@ -20,8 +20,15 @@ public class WSItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        handheldItem(WinterShineItems.CANDY_CANE);
-        handheldItem(WinterShineItems.GLOWING_CANDY_CANE);
+        simpleItem(WinterShineItems.GINGERBREAD);
+        simpleItem(WinterShineItems.GINGERBREAD_BRICK);
+
+        simpleItem(WinterShineItems.SACRIFICIAL_GINGERBREAD_MAN);
+        simpleItem(WinterShineItems.MISCHIEVOUS_GINGERBREAD_MAN);
+        simpleItem(WinterShineItems.COZY_GINGERBREAD_MAN);
+
+        candyCaneItem(WinterShineItems.CANDY_CANE);
+        candyCaneItem(WinterShineItems.GLOWING_CANDY_CANE);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item){

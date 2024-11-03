@@ -17,16 +17,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import org.apache.commons.compress.utils.Lists;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class ConfectioneryBakingRecipeBuilder implements RecipeBuilder {
-    private final NonNullList<Ingredient> ingredients = NonNullList.of(Ingredient.EMPTY);
+    private final NonNullList<Ingredient> ingredients = NonNullList.create();
     private final Item result;
     private final ItemStack resultStack;
     private final int bakingTime;
@@ -52,7 +55,7 @@ public class ConfectioneryBakingRecipeBuilder implements RecipeBuilder {
         return requires(item, 1);
     }
     public ConfectioneryBakingRecipeBuilder requires(ItemLike item, int quantity){
-        return requires(Ingredient.of(item), 1);
+        return requires(Ingredient.of(item), quantity);
     }
     public ConfectioneryBakingRecipeBuilder requires(Ingredient ingredient){
         return requires(ingredient, 1);

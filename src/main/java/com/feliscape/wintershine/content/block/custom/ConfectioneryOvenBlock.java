@@ -4,6 +4,7 @@ import com.feliscape.wintershine.content.block.entity.ConfectioneryOvenBlockEnti
 import com.feliscape.wintershine.registry.WinterShineBlockEntityTypes;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -30,6 +31,7 @@ public class ConfectioneryOvenBlock extends BaseEntityBlock {
 
     public ConfectioneryOvenBlock(Properties pProperties) {
         super(pProperties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(LIT, false));
     }
 
     @Override

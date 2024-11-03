@@ -33,11 +33,10 @@ public class ConfectioneryOvenMenu extends AbstractContainerMenu {
     }
     public ConfectioneryOvenMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData pData){
         super(WinterShineMenuTypes.CONFECTIONERY_OVEN_MENU.get(), pContainerId);
-        checkContainerDataCount(pData, 4);
         blockEntity = ((ConfectioneryOvenBlockEntity) entity);
         inventory = blockEntity.getInventory();
-        this.level = inv.player.level();
         this.data = pData;
+        this.level = inv.player.level();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
@@ -59,6 +58,7 @@ public class ConfectioneryOvenMenu extends AbstractContainerMenu {
                 return false;
             }
         });
+        this.addDataSlots(this.data);
     }
 
     private static ConfectioneryOvenBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
@@ -88,6 +88,12 @@ public class ConfectioneryOvenMenu extends AbstractContainerMenu {
         int i = this.data.get(2);
         int j = this.data.get(3);
         return j != 0 && i != 0 ? Mth.clamp((float)i / (float)j, 0.0F, 1.0F) : 0.0F;
+    }
+
+    public int getCookProgressionScaled() {
+        int i = this.data.get(2);
+        int j = this.data.get(3);
+        return j != 0 && i != 0 ? i * 24 / j : 0;
     }
 
     public float getLitProgress() {

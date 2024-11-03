@@ -1,0 +1,15 @@
+{
+  "effect.pilfering": {
+    "sounds": [
+      { "name": "wintershine:effect/siphon0" },
+      { "name": "wintershine:effect/siphon1" },
+      { "name": "wintershine:effect/siphon1", "pitch": 1.1 },
+      { "name": "wintershine:effect/siphon1", "pitch": 0.9 },
+      { "name": "wintershine:effect/siphon2" },
+      { "name": "wintershine:effect/siphon2", "pitch": 0.9 },
+      { "name": "wintershine:effect/siphon2", "pitch": 1.2 },
+      { "name": "wintershine:effect/siphon3" },
+      { "name": "wintershine:effect/siphon3", "pitch": 0.9 }
+    ]
+  }
+}
